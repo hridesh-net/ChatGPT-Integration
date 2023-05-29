@@ -21,16 +21,21 @@ headers = {
     'Authorization': f'Bearer {api_key}'
 }
 
+user_ques = input("Enter your Questions: \n")
+
 payload = {
     "model": "gpt-3.5-turbo",
-    "messages": [{"role": "user", "content": "Use casses for microservice architecture"}]
+    "messages": [{"role": "user", "content": f"{user_ques}"}]
 }
 
 response = requests.post(url, headers=headers, json=payload)
+gpt_res = response.json()
+# print(gpt_res)
 
 if response.status_code == 200:  # Successful response
     print('Request successful \n')
-    print(response.json())  # Print the response content
+    # print(response.json())  # Print the response content
+    print(gpt_res['choices'][0]['message']['content'])
 else:
     print(f'Request failed with status code: {response.status_code}')
     print(response.text)  # Print the error response content if available
