@@ -46,7 +46,7 @@ openai.Model.list()
 | `model` | `string` | **Required**. Model you want to retrive |
 
 In shell/bash
-```curl
+```shell
 curl https://api.openai.com/v1/models/text-davinci-003 \
   -H "Authorization: Bearer $OPENAI_API_KEY"
 ```
