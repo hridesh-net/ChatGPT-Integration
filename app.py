@@ -32,6 +32,7 @@ response = requests.post(url, headers=headers, json=payload)
 gpt_res = response.json()
 # print(gpt_res)
 
+# response print 
 if response.status_code == 200:  # Successful response
     print('Request successful \n')
     # print(response.json())  # Print the response content
